@@ -1,11 +1,23 @@
+import { INFO, LINEUP } from 'public/data'
+
 export default function Page() {
   return (
     <div className='Page'>
-      <h1 className='font-extrabold text-2xl'>Hello!</h1>
+      <h1 className='Name'>{INFO.title.value}</h1>
 
-      <p className='text-gray-500'>
-        Edit this page in <code>app/page.js</code>
-      </p>
+      <time className='Date' dateTime={INFO.date.value}>
+        {INFO.date.long}
+      </time>
+
+      <address className='Location'>{INFO.location.value}</address>
+
+      <ul>
+        {LINEUP.map((artist) => (
+          <li key={artist.id}>
+            <div className='Artist'>{artist.name}</div>
+          </li>
+        ))}
+      </ul>
     </div>
   )
 }
