@@ -7,20 +7,15 @@ import 'styles/globals.css'
 const opensans = Open_Sans({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
-  const htmlCx = cx(
-    opensans.className,
-    // Light theme
-    'text-zinc-800 bg-rose-100'
-    // Dark theme
-    // 'dark:text-zinc-200 dark:bg-zinc-900'
-  )
+  const htmlStyles = { color: 'rgb(39 39 42)', backgroundColor: 'rgb(255 228 230)' }
+  const htmlCx = cx(opensans.className)
 
   const layoutCx = cx('Layout mx-auto max-w-2xl p-8')
 
-  const bgCx = cx('absolute -z-10 top-0 left-0 w-full h-full object-cover opacity-50')
+  const bgCx = cx('absolute -z-10 top-0 right-0 w-full h-[200%] object-cover opacity-40')
 
   return (
-    <html className={htmlCx}>
+    <html className={htmlCx} style={htmlStyles}>
       <head>
         <title>{INFO.name}</title>
 

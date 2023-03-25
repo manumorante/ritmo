@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./app/**/*.{js,jsx}', './ui/**/*.jsx'],
+  content: ['./app/**/*.{js,jsx}', './components/**/*.jsx'],
   theme: {
     screens: {
       // base  iPhone SE (Jose Luis) 320px
@@ -10,10 +10,4 @@ module.exports = {
       'laptop-l': '1440px',
     },
   },
-  plugins: [
-    function ({ addVariant }) {
-      addVariant('child', '& > *')
-      addVariant('children', '& *')
-    },
-  ],
 }
