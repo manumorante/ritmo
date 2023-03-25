@@ -9,7 +9,7 @@ const montserrat = Montserrat({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   const htmlStyles = { color: META.color, backgroundColor: META.bgcolor }
   const htmlCx = cx(montserrat.className)
-  const bgCx = cx('absolute -z-10 top-0 right-0 w-full h-[200%] object-cover opacity-40')
+  const bgCx = cx('absolute -z-10 top-0 right-0 w-full h-full opacity-40')
 
   return (
     <html className={htmlCx} style={htmlStyles}>
@@ -26,15 +26,7 @@ export default function RootLayout({ children }) {
         <meta property='og:image' content={META.image} />
         <meta property='og:type' content='website' />
       </head>
-      <body>
-        {children}
-        <img
-          className={bgCx}
-          loading='lazy'
-          src='https://assets.website-files.com/5e0a5d9d743608d0f3ea6753/6405ec1049bd67549a85793f_Space.svg'
-          alt='bg'
-        />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }

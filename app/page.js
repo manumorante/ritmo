@@ -10,6 +10,8 @@ import Image from 'next/image'
 export default function Page() {
   const location1Cx = cx('text-3xl py-6 leading-none')
 
+  const ermitaBgCx = cx('absolute -z-10 top-0 right-0 w-full h-[130%] opacity-60')
+
   return (
     <>
       <Section>
@@ -23,6 +25,7 @@ export default function Page() {
           <div className={location1Cx}>Paraje Natural Ermita Los Tres Juanes</div>
         </Container>
         <Image src='/ermita.jpg' width={752} height={430} alt='Ermita Los Tres Juanes' />
+        <Image className={ermitaBgCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
       </Section>
 
       <Section>
