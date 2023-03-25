@@ -7,19 +7,18 @@ import Link from 'components/Link'
 import Container from 'components/Container'
 import Image from 'next/image'
 import Cards from 'components/Cards'
+import Moments from 'components/Moments'
 
 export default function Page() {
-  const location1Cx = cx('text-3xl py-6 leading-none')
-
   const ermitaCx = cx(
     'w-full',
     'max-w-3xl',
-    'h-60',
+    'h-52',
     'tablet:h-auto',
 
     'object-cover',
     'object-right-top',
-    'rounded-l-xl',
+    'ring-inset ring-1 ring-white/70',
     'tablet:rounded-xl',
     'tablet:mx-auto'
   )
@@ -31,27 +30,35 @@ export default function Page() {
 
   return (
     <>
-      <Section>
+      <div className='mt-8'>
         <Container>
           <Logo />
         </Container>
-      </Section>
+      </div>
 
       <Section>
         <Container>
-          <div className={location1Cx}>Paraje Natural Ermita Los Tres Juanes</div>
+          <div className={cx('text-2xl mb-6 leading-none')}>
+            <strong>Paraje Natural</strong>
+            <div>Ermita Los Tres Juanes</div>
+          </div>
         </Container>
 
-        <div className='pl-4'>
-          <Image
-            className={ermitaCx}
-            src='/ermita.jpg'
-            width={752}
-            height={430}
-            alt='Ermita Los Tres Juanes'
-          />
-        </div>
-        <Image className={shadowCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
+        <Image
+          className={ermitaCx}
+          src='/ermita.jpg'
+          width={752}
+          height={430}
+          alt='Ermita Los Tres Juanes'
+        />
+
+        <Image
+          className={cx('absolute -z-10 top-[-15%] right-[-20%] w-full h-[140%] opacity-60')}
+          src='/bg.png'
+          width={1712}
+          height={828}
+          alt='Efecto sombra'
+        />
       </Section>
 
       <Section>
@@ -59,54 +66,53 @@ export default function Page() {
           <Lineup>
             <Lineup.Head />
             <Lineup.Main />
+            <Lineup.Rest />
 
             <div className='mt-8 flex gap-4 flex-col tablet:flex-row'>
-              <Link secondary href={'#'}>
-                Más artístas
-              </Link>
               <Link href={META.tickets.url}>Comprar entradas</Link>
+              {/* <Link secondary href={'#'}>
+                Abonos
+              </Link> */}
             </div>
           </Lineup>
         </Container>
+
+        <Image
+          className={cx('absolute -z-10 top-[-5%] right-[-10%] w-full h-[140%] opacity-30')}
+          src='/bg.png'
+          width={1712}
+          height={828}
+          alt='Efecto sombra'
+        />
       </Section>
 
       <Section>
-        <Cards>
-          <Cards.Item>
-            <div className='text-4xl font-extrabold'>Bus</div>
-            <div className='text-3xl'>Ida y vuelta </div>
-            <div className='text-3xl font-light'>2€ trayecto</div>
-            <div className='mt-4 text-lg leading-none'>Sale del C.C. Neptuno. Sin reserva</div>
-          </Cards.Item>
-
-          <Cards.Item>
-            <div className='text-4xl font-extrabold'>Parking</div>
-            <div className='text-3xl'>Reserva con tu bono</div>
-            <div className='mt-4 text-lg leading-none'>Amplio</div>
-          </Cards.Item>
-
-          <Cards.Item>
-            <div className='text-4xl font-extrabold'>Ventaja</div>
-            <div className='text-3xl'>Alguna otra ventaja que me invente</div>
-            <div className='mt-4 text-lg leading-none'>Tu verás</div>
-          </Cards.Item>
-
-          <Cards.Item>
-            <div className='text-4xl font-extrabold'>Y algo más largo de título</div>
-            <div className='text-3xl'>Muy bien estas tarjetas</div>
-          </Cards.Item>
-        </Cards>
-        <Image className={shadowCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
-      </Section>
-
-      <Section title='Ediciones anteriores'>
-        <Container>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo officia magni
-            eveniet neque atque placeat dolores voluptate accusantium tenetur excepturi a at
-            architecto magnam in odit doloremque, enim dolore?
-          </p>
-        </Container>
+        <Moments>
+          <Moments.Item>
+            <Image src='/moments/1.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/2.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/3.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/4.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/5.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/6.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/7.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+          <Moments.Item>
+            <Image src='/moments/8.jpg' width={1080} height={1080} alt='Momento' />
+          </Moments.Item>
+        </Moments>
       </Section>
 
       <Section title='Cómo llegar'>
@@ -144,6 +150,45 @@ export default function Page() {
               </li>
             </ol>
           </div>
+        </Container>
+      </Section>
+
+      <Section>
+        <Cards>
+          <Cards.Item>
+            <div className='text-3xl font-extrabold'>Bus</div>
+            <div className='text-3xl'>Ida y vuelta </div>
+            <div className='text-3xl font-light'>2€ trayecto</div>
+            <div className='mt-4 text-lg leading-none'>Sale del C.C. Neptuno. Sin reserva</div>
+          </Cards.Item>
+
+          <Cards.Item>
+            <div className='text-3xl font-extrabold'>Parking</div>
+            <div className='text-3xl'>Reserva con tu bono</div>
+            <div className='mt-4 text-lg leading-none'>Amplio</div>
+          </Cards.Item>
+
+          <Cards.Item>
+            <div className='text-3xl font-extrabold'>Ventaja</div>
+            <div className='text-3xl'>Alguna otra ventaja que me invente</div>
+            <div className='mt-4 text-lg leading-none'>Tu verás</div>
+          </Cards.Item>
+
+          <Cards.Item>
+            <div className='text-3xl font-extrabold'>Y algo más largo de título</div>
+            <div className='text-3xl'>Muy bien estas tarjetas</div>
+          </Cards.Item>
+        </Cards>
+        <Image className={shadowCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
+      </Section>
+
+      <Section title='Ediciones anteriores'>
+        <Container>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo officia magni
+            eveniet neque atque placeat dolores voluptate accusantium tenetur excepturi a at
+            architecto magnam in odit doloremque, enim dolore?
+          </p>
         </Container>
       </Section>
 

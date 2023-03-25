@@ -4,7 +4,7 @@ const rest = LINEUP.filter((artist) => artist.level === 3)
 
 export default function Main() {
   return (
-    <div className='Rest'>
+    <div className='Rest flex flex-col gap-2'>
       {rest.map((artist) => (
         <div className='text-3xl font-medium leading-none' key={artist.id}>
           {artist.name}
