@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { INFO, META } from 'public/data'
+import { META } from 'public/data'
 import { Open_Sans } from 'next/font/google'
 import cx from 'clsx'
 import 'styles/globals.css'
@@ -9,15 +9,13 @@ const opensans = Open_Sans({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   const htmlStyles = { color: META.color, backgroundColor: META.bgcolor }
   const htmlCx = cx(opensans.className)
-
   const layoutCx = cx('Layout mx-auto max-w-2xl p-8')
-
   const bgCx = cx('absolute -z-10 top-0 right-0 w-full h-[200%] object-cover opacity-40')
 
   return (
     <html className={htmlCx} style={htmlStyles}>
       <head>
-        <title>{INFO.name}</title>
+        <title>{META.title}</title>
 
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
         <meta name='description' content={META.description} />
