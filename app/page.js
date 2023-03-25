@@ -6,11 +6,28 @@ import Section from 'components/Section'
 import Link from 'components/Link'
 import Container from 'components/Container'
 import Image from 'next/image'
+import Cards from 'components/Cards'
 
 export default function Page() {
   const location1Cx = cx('text-3xl py-6 leading-none')
 
-  const ermitaBgCx = cx('absolute -z-10 top-0 right-0 w-full h-[130%] opacity-60')
+  const ermitaCx = cx(
+    'w-full',
+    'max-w-3xl',
+    'h-60',
+    'tablet:h-auto',
+
+    'object-cover',
+    'object-right-top',
+    'rounded-l-xl',
+    'tablet:rounded-xl',
+    'tablet:mx-auto'
+  )
+  const shadowCx = cx('absolute -z-10 top-[-5%] right-[-20%] w-full h-[140%] opacity-60')
+
+  const numberDotCx = cx(
+    'flex shrink-0 justify-center items-center text-center rounded-full bg-white shadow w-14 h-14 mr-4 font-light text-4xl'
+  )
 
   return (
     <>
@@ -24,8 +41,17 @@ export default function Page() {
         <Container>
           <div className={location1Cx}>Paraje Natural Ermita Los Tres Juanes</div>
         </Container>
-        <Image src='/ermita.jpg' width={752} height={430} alt='Ermita Los Tres Juanes' />
-        <Image className={ermitaBgCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
+
+        <div className='pl-4'>
+          <Image
+            className={ermitaCx}
+            src='/ermita.jpg'
+            width={752}
+            height={430}
+            alt='Ermita Los Tres Juanes'
+          />
+        </div>
+        <Image className={shadowCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
       </Section>
 
       <Section>
@@ -34,8 +60,8 @@ export default function Page() {
             <Lineup.Head />
             <Lineup.Main />
 
-            <div className='flex gap-4'>
-              <Link secondary href={META.tickets.url}>
+            <div className='mt-8 flex gap-4 flex-col tablet:flex-row'>
+              <Link secondary href={'#'}>
                 Más artístas
               </Link>
               <Link href={META.tickets.url}>Comprar entradas</Link>
@@ -44,39 +70,86 @@ export default function Page() {
         </Container>
       </Section>
 
+      <Section>
+        <Cards>
+          <Cards.Item>
+            <div className='text-4xl font-extrabold'>Bus</div>
+            <div className='text-3xl'>Ida y vuelta </div>
+            <div className='text-3xl font-light'>2€ trayecto</div>
+            <div className='mt-4 text-lg leading-none'>Sale del C.C. Neptuno. Sin reserva</div>
+          </Cards.Item>
+
+          <Cards.Item>
+            <div className='text-4xl font-extrabold'>Parking</div>
+            <div className='text-3xl'>Reserva con tu bono</div>
+            <div className='mt-4 text-lg leading-none'>Amplio</div>
+          </Cards.Item>
+
+          <Cards.Item>
+            <div className='text-4xl font-extrabold'>Ventaja</div>
+            <div className='text-3xl'>Alguna otra ventaja que me invente</div>
+            <div className='mt-4 text-lg leading-none'>Tu verás</div>
+          </Cards.Item>
+
+          <Cards.Item>
+            <div className='text-4xl font-extrabold'>Y algo más largo de título</div>
+            <div className='text-3xl'>Muy bien estas tarjetas</div>
+          </Cards.Item>
+        </Cards>
+        <Image className={shadowCx} src='/bg.png' width={1712} height={828} alt='Efecto sombra' />
+      </Section>
+
+      <Section title='Ediciones anteriores'>
+        <Container>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo explicabo officia magni
+            eveniet neque atque placeat dolores voluptate accusantium tenetur excepturi a at
+            architecto magnam in odit doloremque, enim dolore?
+          </p>
+        </Container>
+      </Section>
+
       <Section title='Cómo llegar'>
         <Container>
           <div className='flex flex-col gap-4'>
             <p>
-              RIT/MO se celebra en el Paraje Natural de la Ermita de los Tres Juanes (Atarfe,
-              Granada).
+              <strong>RIT/MO</strong> se celebra en el{' '}
+              <strong>Paraje Natural de la Ermita de los Tres Juanes</strong> (Atarfe, Granada).
             </p>
-            <p>
-              Desde Granada se llega a través de la Circunvalación dirección Jaén. Salida 3
-              (Almería/Murcia – Málaga/Algeciras – Córdoba – Aeropuerto) dirección Málaga/Algeciras
-              Córdoba.
-            </p>
-            <p>Continuar hasta salida 238 (Atarfe / Las Canteras).</p>
-            <p>
-              Girar a la derecha dirección “Las Canteras” hasta desvío a la derecha siguiendo
-              indicación “La Ermita”.
-            </p>
-            <p>Esa carretera ya te conducirá directamente hasta el recinto de RIT/MO.</p>
+            <ol className='child:flex flex flex-col gap-4 text-lg'>
+              <li>
+                <div className={numberDotCx}>1</div>
+                <div>
+                  Se llega a través de la Circunvalación dirección Jaén. <strong>Salida 3</strong>
+                </div>
+              </li>
+              <li>
+                <div className={numberDotCx}>2</div>
+                <div>
+                  Continuar hasta <strong>salida 238</strong> (Atarfe / Las Canteras).
+                </div>
+              </li>
+              <li>
+                <div className={numberDotCx}>3</div>
+                <div>
+                  Girar a la derecha dirección <strong>Las Canteras</strong> hasta desvío a la
+                  derecha siguiendo indicación <strong>La Ermita</strong>.
+                </div>
+              </li>
+              <li>
+                <div className={numberDotCx}>4</div>
+                <div>
+                  Esa carretera va directa hasta el recinto de <strong>RIT/MO</strong>. ¡Disfruta!
+                </div>
+              </li>
+            </ol>
           </div>
         </Container>
       </Section>
 
-      <div className='flex gap-4'>
-        <div className='w-60 h-20 bg-white rounded-lg shadow'></div>
-        <div className='w-60 h-20 bg-white rounded-lg shadow'></div>
-        <div className='w-60 h-20 bg-white rounded-lg shadow'></div>
-      </div>
-
-      <Section title='¿Tiene RIT/MO servicio de autobuses?'>
+      <Section title=''>
         <Container>
-          Sí. La Organización habilitará una línea de autobuses para ir y volver de RIT/MO desde
-          Granada (Centro Comercial Neptuno; 2€ por trayecto). Los tickets se compran al subirse al
-          autobús.
+          <p>RIT/MO 2023</p>
         </Container>
       </Section>
     </>

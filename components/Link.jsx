@@ -2,15 +2,14 @@ import cx from 'clsx'
 export default function Link({ children, href, secondary = false }) {
   const baseCx = cx(
     'inline-block',
-    'my-4',
-    'py-2.5',
+    'py-4',
     'px-4',
 
     'text-center',
     'rounded-full',
     { 'bg-white': !secondary },
 
-    'text-md',
+    'text-lg',
     'font-semibold',
     'text-gray-900',
 

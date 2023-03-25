@@ -10,4 +10,10 @@ module.exports = {
       'laptop-l': '1440px',
     },
   },
+  plugins: [
+    function ({ addVariant }) {
+      addVariant('child', '& > *')
+      addVariant('children', '& *')
+    },
+  ],
 }
