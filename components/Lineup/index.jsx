@@ -3,7 +3,7 @@ import Main from './Main'
 import Rest from './Rest'
 
 function Lineup({ children }) {
-  return <div className='Lineup flex flex-col gap-2'>{children}</div>
+  return <div className='Lineup flex flex-col gap-3'>{children}</div>
 }
 
 Lineup.Head = Head

@@ -1,15 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 import { META } from 'public/data'
-import { Open_Sans } from 'next/font/google'
+import { Montserrat } from 'next/font/google'
 import cx from 'clsx'
 import 'styles/globals.css'
 
-const opensans = Open_Sans({ subsets: ['latin'] })
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   const htmlStyles = { color: META.color, backgroundColor: META.bgcolor }
-  const htmlCx = cx(opensans.className)
-  const layoutCx = cx('Layout mx-auto max-w-2xl p-7')
+  const htmlCx = cx(montserrat.className)
   const bgCx = cx('absolute -z-10 top-0 right-0 w-full h-[200%] object-cover opacity-40')
 
   return (
@@ -28,7 +27,7 @@ export default function RootLayout({ children }) {
         <meta property='og:type' content='website' />
       </head>
       <body>
-        <div className={layoutCx}>{children}</div>
+        {children}
         <img
           className={bgCx}
           loading='lazy'
