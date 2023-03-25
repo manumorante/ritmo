@@ -9,7 +9,7 @@ const opensans = Open_Sans({ subsets: ['latin'] })
 export default function RootLayout({ children }) {
   const htmlStyles = { color: META.color, backgroundColor: META.bgcolor }
   const htmlCx = cx(opensans.className)
-  const layoutCx = cx('Layout mx-auto max-w-2xl p-8')
+  const layoutCx = cx('Layout mx-auto max-w-2xl p-7')
   const bgCx = cx('absolute -z-10 top-0 right-0 w-full h-[200%] object-cover opacity-40')
 
   return (

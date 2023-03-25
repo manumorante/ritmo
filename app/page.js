@@ -9,10 +9,9 @@ export default function Page() {
   const dateCx = cx('text-3xl font-light leading-none')
   const location1Cx = cx('text-3xl leading-none')
   const location2Cx = cx('text-lg font-light')
-  const lineupCx = cx('text-4xl font-medium')
 
   return (
-    <div className='Page'>
+    <>
       <div className='flex justify-between gap-4 my-2'>
         <Logo />
         <div className={editionCx}>2023</div>
@@ -27,10 +26,12 @@ export default function Page() {
       </Section>
 
       <Section>
-        <div className={lineupCx}>
-          <Lineup />
-        </div>
+        <Lineup>
+          <Lineup.Head />
+          <Lineup.Main />
+          <Lineup.Rest />
+        </Lineup>
       </Section>
-    </div>
+    </>
   )
 }
