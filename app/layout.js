@@ -1,9 +1,26 @@
+/* eslint-disable @next/next/no-img-element */
 import { INFO, META } from 'public/data'
+import { Open_Sans } from 'next/font/google'
+import cx from 'clsx'
 import 'styles/globals.css'
 
+const opensans = Open_Sans({ subsets: ['latin'] })
+
 export default function RootLayout({ children }) {
+  const htmlCx = cx(
+    opensans.className,
+    // Light theme
+    'text-zinc-800 bg-rose-100'
+    // Dark theme
+    // 'dark:text-zinc-200 dark:bg-zinc-900'
+  )
+
+  const layoutCx = cx('Layout mx-auto max-w-2xl p-8')
+
+  const bgCx = cx('absolute -z-10 top-0 left-0 w-full h-full object-cover opacity-50')
+
   return (
-    <html>
+    <html className={htmlCx}>
       <head>
         <title>{INFO.name}</title>
 
@@ -18,7 +35,13 @@ export default function RootLayout({ children }) {
         <meta property='og:type' content='website' />
       </head>
       <body>
-        <div className='Layout mx-auto max-w-3xl p-8'>{children}</div>
+        <div className={layoutCx}>{children}</div>
+        <img
+          className={bgCx}
+          loading='lazy'
+          src='https://assets.website-files.com/5e0a5d9d743608d0f3ea6753/6405ec1049bd67549a85793f_Space.svg'
+          alt='bg'
+        />
       </body>
     </html>
   )

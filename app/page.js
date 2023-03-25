@@ -1,23 +1,33 @@
-import { INFO, LINEUP } from 'public/data'
+import { INFO } from 'public/data'
+import cx from 'clsx'
+import Lineup from 'components/Lineup'
+import Logo from 'components/Logo'
 
 export default function Page() {
+  const maintextCx = cx('uppercase')
+  const dateCx = cx('text-3xl font-light leading-none')
+  const location1Cx = cx('text-3xl leading-none')
+  const location2Cx = cx('text-lg font-light')
+  const lineupCx = cx('text-4xl font-medium')
+
   return (
     <div className='Page'>
-      <h1 className='Name'>{INFO.title.value}</h1>
+      <div className='flex flex-col gap-4'>
+        {/* Logo */}
+        <div className='my-2'>
+          <Logo />
+        </div>
 
-      <time className='Date' dateTime={INFO.date.value}>
-        {INFO.date.long}
-      </time>
+        <div className={maintextCx}>
+          <time className={dateCx}>5 y 6 de Mayo</time>
+          <div className={location1Cx}>Paraje Natural de la Ermita de los Tres Juanes</div>
+          <div className={location2Cx}>Atarfe, Granada</div>
+        </div>
 
-      <address className='Location'>{INFO.location.value}</address>
-
-      <ul>
-        {LINEUP.map((artist) => (
-          <li key={artist.id}>
-            <div className='Artist'>{artist.name}</div>
-          </li>
-        ))}
-      </ul>
+        <div className={lineupCx}>
+          <Lineup />
+        </div>
+      </div>
     </div>
   )
 }
