@@ -7,7 +7,7 @@ import 'styles/globals.css'
 const opensans = Open_Sans({ subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
-  const htmlStyles = { color: 'rgb(39 39 42)', backgroundColor: 'rgb(255 228 230)' }
+  const htmlStyles = { color: META.color, backgroundColor: META.bgcolor }
   const htmlCx = cx(opensans.className)
 
   const layoutCx = cx('Layout mx-auto max-w-2xl p-8')

@@ -1,25 +1,10 @@
-export const INFO = {
-  title: {
-    value: 'RITMO',
-    text: 'RIT/MO',
-    long: 'RIT/MO Festival',
-  },
-  date: {
-    value: '2023-05-06',
-    text: '5-6 de mayo',
-    long: '5-6 de mayo 2023',
-  },
-  location: {
-    value: 'Ermita de los Tres Juanes, Atarfe (Granada)',
-  },
-}
-
 export const META = {
   title: 'RIT/MO es Naturaleza',
   description: 'Festival de música en un paraje natural',
   url: 'https://ritmofestival.com',
   image: '/og/ritmo-festival.jpg',
-  bgcolor: '#ffffff',
+  color: '#27272A', // gray-900
+  bgcolor: '#FFE4E6', // rose-50
 }
 
 export const LINEUP = [
