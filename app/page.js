@@ -1,89 +1,80 @@
-import cx from 'clsx'
+'use client'
+
 import { META } from 'public/data'
+
+import { Parallax } from 'react-scroll-parallax'
+import cx from 'clsx'
+import Image from 'next/image'
+
 import Lineup from 'components/Lineup'
-import Logo from 'components/Logo'
 import Section from 'components/Section'
 import Link from 'components/Link'
 import Container from 'components/Container'
-import Image from 'next/image'
 import Cards from 'components/Cards'
 import Moments from 'components/Moments'
 
 export default function Page() {
-  const ermitaCx = cx(
-    'w-full',
-    'max-w-3xl',
-    'h-52',
-    'tablet:h-auto',
-
-    'object-cover',
-    'object-right-top',
-    'ring-inset ring-1 ring-white/70',
-    'tablet:rounded-xl',
-    'tablet:mx-auto'
-  )
   const shadowCx = cx('absolute -z-10 top-[-5%] right-[-20%] w-full h-[140%] opacity-60')
 
   const numberDotCx = cx(
-    'flex shrink-0 justify-center items-center text-center rounded-full bg-white shadow w-14 h-14 mr-4 font-light text-4xl'
+    'flex shrink-0 justify-center items-center text-center rounded-full bg-white shadow w-14 h-14 mr-4 text-4xl'
   )
+
+  const parallaxDisabled = false
 
   return (
     <>
-      <div className='mt-8'>
-        <Container>
-          <Logo />
-        </Container>
-      </div>
+      <Container>
+        <Image
+          className='fixed top-8 w-44 h-auto'
+          src='/ritmo-logo.png'
+          width={300}
+          height={100}
+          alt='RITMO logo'
+          loading='eager'
+        />
+
+        <Parallax opacity={[2, 0.5]} className={cx('fixed top-28')} disabled={parallaxDisabled}>
+          <span className='text-2xl'>Paraje Ermita de los Tres Juanes</span>
+          <div className='text-2xl font-extrabold'>5 y 6 de mayo 2023</div>
+        </Parallax>
+
+        <Parallax
+          speed={15}
+          className='fixed top-0 h-screen flex justify-center items-center'
+          disabled={parallaxDisabled}>
+          <Image src='/motion.png' width={462} height={489} alt='BG' />
+        </Parallax>
+      </Container>
 
       <Section>
         <Container>
-          <div className={cx('text-2xl mb-6 leading-none')}>
-            <strong>Paraje Natural</strong>
-            <div>Ermita Los Tres Juanes</div>
-          </div>
-        </Container>
+          <Parallax
+            style={{ marginTop: '90vh' }}
+            className='flex justify-center'
+            disabled={parallaxDisabled}>
+            <Lineup>
+              <Lineup.Head />
+              <Lineup.Main />
+              <Lineup.Rest />
 
-        <Image
-          className={ermitaCx}
-          src='/ermita.jpg'
-          width={752}
-          height={430}
-          alt='Ermita Los Tres Juanes'
-        />
-
-        <Image
-          className={cx('absolute -z-10 top-[-15%] right-[-20%] w-full h-[140%] opacity-60')}
-          src='/bg.png'
-          width={1712}
-          height={828}
-          alt='Efecto sombra'
-        />
-      </Section>
-
-      <Section>
-        <Container>
-          <Lineup>
-            <Lineup.Head />
-            <Lineup.Main />
-            <Lineup.Rest />
-
-            <div className='mt-8 flex gap-4 flex-col tablet:flex-row'>
-              <Link href={META.tickets.url}>Comprar entradas</Link>
-              {/* <Link secondary href={'#'}>
+              <div className='mt-8 flex gap-4 flex-col tablet:flex-row'>
+                <Link href={META.tickets.url}>Comprar entradas</Link>
+                {/* <Link secondary href={'#'}>
                 Abonos
               </Link> */}
-            </div>
-          </Lineup>
+              </div>
+            </Lineup>
+          </Parallax>
         </Container>
 
-        <Image
+        {/* <Image
           className={cx('absolute -z-10 top-[-5%] right-[-10%] w-full h-[140%] opacity-30')}
           src='/bg.png'
           width={1712}
           height={828}
           alt='Efecto sombra'
-        />
+        /> */}
       </Section>
 
       <Section>
@@ -158,7 +149,7 @@ export default function Page() {
           <Cards.Item>
             <div className='text-3xl font-extrabold'>Bus</div>
             <div className='text-3xl'>Ida y vuelta </div>
-            <div className='text-3xl font-light'>2€ trayecto</div>
+            <div className='text-3xl'>2€ trayecto</div>
             <div className='mt-4 text-lg leading-none'>Sale del C.C. Neptuno. Sin reserva</div>
           </Cards.Item>
 

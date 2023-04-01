@@ -5,8 +5,6 @@
 @layer base {
   html,
   body {
-    @apply min-h-full overflow-x-hidden;
+    @apply min-h-full;
   }
 }
-
-/* bg-gradient-to-b from-purple-300 via-rose-300 to-rose-100 */
