@@ -3,8 +3,6 @@ export const META = {
   description: 'Festival de música en un paraje natural',
   url: 'https://ritmofestival.com',
   image: '/og/ritmo-festival.jpg',
-  color: '#ffffff',
-  bgcolor: '#F0788B',
   tickets: {
     url: 'https://entradas.tickbox.es/espectaculo/ritmo-2023--5-y-6-mayo/Ritmo2023',
   },

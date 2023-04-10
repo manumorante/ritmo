@@ -1,15 +1,16 @@
-import Container from './Container'
 import cx from 'clsx'
 
-export default function Section({ children, title, className }) {
-  return (
-    <section className={cx('Section relative my-14', className)}>
-      {title && (
-        <Container>
-          <h2 className='text-4xl mb-4'>{title}</h2>
-        </Container>
-      )}
-      {children}
-    </section>
+export default function Section({ children, className }) {
+  const mainCx = cx(
+    //
+    'Section',
+    'h-[80vh]',
+
+    'flex',
+    'flex-col',
+    'items-center',
+    'justify-center',
+    className
   )
+  return <section className={mainCx}>{children}</section>
 }

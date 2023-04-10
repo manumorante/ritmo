@@ -6,7 +6,7 @@ export default function Link({ children, href, secondary = false }) {
     { 'py-4 px-4': secondary },
 
     'text-lg',
-    'font-bold',
+    'font-extrabold',
 
     'text-center',
     'rounded-full',

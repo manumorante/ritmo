@@ -2,9 +2,18 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-@layer base {
-  html,
-  body {
-    @apply min-h-full;
-  }
+.gradient {
+  background: linear-gradient(180deg, #aa6890 0%, #dd778a 100%);
+}
+
+.text-gradient {
+  background: linear-gradient(275deg, #ac3eb7 10%, #ea8e98 75%, #ffbdbd 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.text-min-xl {
+  font-size: min(15vw, 34px);
 }
