@@ -10,10 +10,10 @@
 
 @layer components {
   .section {
-    @apply w-screen min-h-[90vh] overflow-hidden relative;
+    @apply w-screen overflow-hidden relative;
   }
 
-  .absolute-right-left {
+  .right-left {
     @apply absolute right-0 left-0;
   }
 

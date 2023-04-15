@@ -3,15 +3,16 @@
 import cx from 'clsx'
 import { useParallax } from 'lib/useParallax'
 import { percentMinMax } from 'lib/percentMinMax'
+import { yxz } from 'lib/yxz'
 import { useRef } from 'react'
 
 export default function What() {
   const ref = useRef()
   const { scroll } = useParallax({ ref })
-  const sectionCx = cx('What', 'section')
+  const sectionCx = cx('What', 'section', 'min-h-[60vh]')
 
   const textCx = cx(
-    'absolute-right-left top-1/2',
+    'right-left top-1/2',
     'px-8',
     'text-center',
     'text-min-xl',
@@ -19,7 +20,7 @@ export default function What() {
     'text-[#AC3EB7] text-gradient'
   )
 
-  const textStyle = { willChange: 'transform', transform: `translateY(${scroll * -3}px)` }
+  const textStyle = yxz(percentMinMax(scroll, -60, -30))
 
   return (
     <section ref={ref} className={sectionCx}>

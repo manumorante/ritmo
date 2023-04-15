@@ -5,14 +5,15 @@ import Image from 'next/image'
 import { useRef } from 'react'
 import { useParallax } from 'lib/useParallax'
 import { percentMinMax } from 'lib/percentMinMax'
+import { yxz } from 'lib/yxz'
 
 export default function Location() {
   const ref = useRef()
-  const { scroll, visible } = useParallax({ ref })
+  const { scroll } = useParallax({ ref })
 
   const mainCx = cx('Location section h-[50vh]')
   const imageCx = cx('w-full h-full object-cover')
-  const imageStyle = { objectPosition: `${percentMinMax(scroll, 0, 100)}% top` }
+  const imageStyle = yxz(percentMinMax(scroll, 40, 60))
 
   return (
     <section ref={ref} className={mainCx}>

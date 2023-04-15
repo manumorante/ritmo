@@ -8,19 +8,20 @@ import Image from 'next/image'
 
 export default function What2() {
   const ref = useRef()
-  const { scroll, visible } = useParallax({ ref })
+  const { scroll } = useParallax({ ref })
 
-  const mainCx = cx('What2', 'section centered', 'p-[10%]', 'gradient')
+  const sectionCx = cx('What2', 'section centered', 'gradient', 'py-10')
 
   const titleCx = cx(
+    'm-10',
     'text-min-xl',
     'text-center font-extrabold tracking-tight leading-none text-white'
   )
 
-  const imageCx = cx('Paisaje', 'absolute bottom-16 w-full h-auto')
+  const imageCx = cx('Paisaje', 'w-full h-auto mb-10')
 
   return (
-    <section ref={ref} className={mainCx}>
+    <section ref={ref} className={sectionCx}>
       <h3 className={titleCx}>Un evento excepcional enmarcado por la belleza natural de Granada</h3>
 
       <Image
