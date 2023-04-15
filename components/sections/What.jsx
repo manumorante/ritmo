@@ -19,7 +19,7 @@ export default function What() {
     'text-[#AC3EB7] text-gradient'
   )
 
-  const textStyle = { transform: `translateY(${scroll * -3}px)` }
+  const textStyle = { willChange: 'transform', transform: `translateY(${scroll * -3}px)` }
 
   return (
     <section ref={ref} className={sectionCx}>

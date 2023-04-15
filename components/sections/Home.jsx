@@ -16,10 +16,20 @@ export default function Home() {
   const dateTxtCx = cx('text-2xl text-white opacity-80')
 
   const imageCx = cx('Arco', 'absolute top-64 w-full h-auto')
-
-  const logoStyle = { transform: `translateY(${percentMinMax(scroll, 0, 400)}px)` }
-  const dateStyle = { transform: `translateY(${percentMinMax(scroll, 0, 350)}px)` }
-  const imageStyle = { transform: `translateY(${percentMinMax(scroll, 0, 500)}px)` }
+  const allTransforms =
+    'will-change: transform; transform: translate3d(-27.6618%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;'
+  const logoStyle = {
+    willChange: 'transform',
+    transform: `translateY(${percentMinMax(scroll, 0, 400)}px)`,
+  }
+  const dateStyle = {
+    willChange: 'transform',
+    transform: `translateY(${percentMinMax(scroll, 0, 350)}px)`,
+  }
+  const imageStyle = {
+    willChange: 'transform',
+    transform: `translateY(${percentMinMax(scroll, 0, 500)}px)`,
+  }
 
   return (
     <section ref={ref} className={sectionCx}>
