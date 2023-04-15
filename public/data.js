@@ -6,6 +6,7 @@ export const META = {
   tickets: {
     url: 'https://entradas.tickbox.es/espectaculo/ritmo-2023--5-y-6-mayo/Ritmo2023',
   },
+  bgcolor: '#d674a3',
 }
 
 export const LINEUP = [
