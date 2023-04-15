@@ -4,6 +4,7 @@ import What2 from 'components/sections/What2'
 import Location from 'components/sections/Location'
 import Past from 'components/sections/Past'
 import Lineup from 'components/sections/Lineup'
+import Info from 'components/sections/Info'
 
 export default function Page() {
   return (
@@ -14,6 +15,7 @@ export default function Page() {
       <What2 />
       <Past />
       <Lineup />
+      <Info />
     </>
   )
 }

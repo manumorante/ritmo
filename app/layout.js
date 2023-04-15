@@ -1,16 +1,13 @@
 import { META } from 'public/data'
 
-import cx from 'clsx'
 import { Sora } from 'next/font/google'
 import 'styles/globals.css'
 
-const sora = Sora({ weight: ['100', '400', '800'], subsets: ['latin'] })
+const sora = Sora({ weight: ['500', '800'], subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
-  const htmlCx = cx(sora.className)
-
   return (
-    <html className={htmlCx}>
+    <html className={sora.className}>
       <head>
         <title>{META.title}</title>
 

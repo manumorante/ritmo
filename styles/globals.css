@@ -2,9 +2,15 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@layer base {
+  body {
+    background-color: #c762aa29;
+  }
+}
+
 @layer components {
   .Section {
-    @apply w-screen h-screen overflow-hidden;
+    @apply w-screen h-screen overflow-hidden relative;
   }
 
   .absolute-right-left {
@@ -18,7 +24,11 @@
 
 @layer utilities {
   .text-min-xl {
-    font-size: min(15vw, 34px);
+    font-size: min(13.8vw, 48px);
+  }
+
+  .text-min-md {
+    font-size: min(10vw, 20px);
   }
 
   .gradient {

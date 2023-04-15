@@ -8,7 +8,7 @@ import { useRef } from 'react'
 export default function What() {
   const ref = useRef()
   const { scroll } = useParallax({ ref })
-  const mainCx = cx('What', 'Section relative', 'bg-white')
+  const sectionCx = cx('What', 'Section')
 
   const textCx = cx(
     'absolute-right-left top-1/2',
@@ -22,7 +22,7 @@ export default function What() {
   const textStyle = { transform: `translateY(${scroll * -3}px)` }
 
   return (
-    <section ref={ref} className={mainCx}>
+    <section ref={ref} className={sectionCx}>
       <h3 className={textCx} style={textStyle}>
         Quédate a vivir la música en un paraje natural
       </h3>
