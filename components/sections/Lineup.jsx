@@ -8,7 +8,7 @@ import { useRef } from 'react'
 export default function Lineup() {
   const ref = useRef()
   const { scroll } = useParallax({ ref })
-  const sectionCx = cx('Lineup', 'Section py-10', 'gradient text-white')
+  const sectionCx = cx('Lineup', 'section py-10', 'gradient text-white')
 
   const titleCx = cx(
     'm-10',

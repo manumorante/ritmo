@@ -10,7 +10,7 @@ import Image from 'next/image'
 export default function Past() {
   const ref = useRef()
   const { scroll } = useParallax({ ref })
-  const sectionCx = cx('Past', 'Section py-10', 'bg-white')
+  const sectionCx = cx('Past', 'section py-10', 'bg-white')
 
   const titleCx = cx(
     'm-10',

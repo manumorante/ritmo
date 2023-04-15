@@ -9,7 +9,7 @@ export default function What2() {
   const ref = useRef()
   const { scroll, visible } = useParallax({ ref })
 
-  const mainCx = cx('What2', 'Section centered', 'p-[10%]', 'gradient')
+  const mainCx = cx('What2', 'section centered', 'p-[10%]', 'gradient')
 
   const textCx = cx(
     'text-min-xl',

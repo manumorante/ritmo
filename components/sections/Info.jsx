@@ -10,7 +10,7 @@ import Image from 'next/image'
 export default function Info() {
   const ref = useRef()
   const { scroll } = useParallax({ ref })
-  const sectionCx = cx('Info', 'Section py-10', 'bg-white')
+  const sectionCx = cx('Info', 'section py-10', 'bg-white')
 
   const titleCx = cx(
     'm-10',

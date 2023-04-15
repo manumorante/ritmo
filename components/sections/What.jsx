@@ -8,7 +8,7 @@ import { useRef } from 'react'
 export default function What() {
   const ref = useRef()
   const { scroll } = useParallax({ ref })
-  const sectionCx = cx('What', 'Section')
+  const sectionCx = cx('What', 'section')
 
   const textCx = cx(
     'absolute-right-left top-1/2',

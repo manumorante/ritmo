@@ -10,7 +10,7 @@ export default function Location() {
   const ref = useRef()
   const { scroll, visible } = useParallax({ ref })
 
-  const mainCx = cx('Location Section h-[50vh]')
+  const mainCx = cx('Location section h-[50vh]')
   const imageCx = cx('w-full h-full object-cover')
   const imageStyle = { objectPosition: `${percentMinMax(scroll, 0, 100)}% top` }
 
