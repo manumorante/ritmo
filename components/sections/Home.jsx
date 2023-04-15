@@ -9,26 +9,28 @@ import Image from 'next/image'
 export default function Home() {
   const ref = useRef(null)
   const { scroll } = useParallax({ ref, visible: true })
-  const sectionCx = cx('Home', 'section bg-[#d674a3]')
+  const sectionCx = cx('Home', 'section gradient')
   const logoCx = cx('Ritmo', 'absolute-right-left top-40')
   const ritmoCx = cx('max-w-[200px] h-auto mx-auto')
   const dateCx = cx('Date', 'absolute-right-left top-60 text-center font-medium')
   const dateTxtCx = cx('text-2xl text-white opacity-80')
 
   const imageCx = cx('Arco', 'absolute top-64 w-full h-auto')
-  const allTransforms =
-    'will-change: transform; transform: translate3d(-27.6618%, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;'
+
   const logoStyle = {
     willChange: 'transform',
-    transform: `translateY(${percentMinMax(scroll, 0, 400)}px)`,
+    transform: `translate3d(0px, ${percentMinMax(scroll, 0, 400)}px, 0px)`,
+    transformStyle: 'preserve-3d',
   }
   const dateStyle = {
     willChange: 'transform',
-    transform: `translateY(${percentMinMax(scroll, 0, 350)}px)`,
+    transform: `translate3d(0px, ${percentMinMax(scroll, 0, 350)}px, 0px)`,
+    transformStyle: 'preserve-3d',
   }
   const imageStyle = {
     willChange: 'transform',
-    transform: `translateY(${percentMinMax(scroll, 0, 500)}px)`,
+    transform: `translate3d(0px, ${percentMinMax(scroll, 0, 500)}px, 0px)`,
+    transformStyle: 'preserve-3d',
   }
 
   return (

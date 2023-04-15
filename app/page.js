@@ -11,11 +11,11 @@ export default function Page() {
     <>
       <Home />
       <What />
-      {/* <Location />
+      <Location />
       <What2 />
       <Past />
       <Lineup />
-      <Info /> */}
+      <Info />
     </>
   )
 }
