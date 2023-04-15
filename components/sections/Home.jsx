@@ -9,7 +9,7 @@ import Image from 'next/image'
 export default function Home() {
   const ref = useRef(null)
   const { scroll } = useParallax({ ref, visible: true })
-  const sectionCx = cx('Home', 'section gradient')
+  const sectionCx = cx('Home', 'section gradient bg-fixed')
   const logoCx = cx('Ritmo', 'absolute-right-left top-40')
   const ritmoCx = cx('max-w-[200px] h-auto mx-auto')
   const dateCx = cx('Date', 'absolute-right-left top-60 text-center font-medium')
