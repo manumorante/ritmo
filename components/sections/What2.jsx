@@ -1,13 +1,15 @@
+'use client'
+
 import cx from 'clsx'
-import Section from 'components/Section'
+import { useParallax } from 'lib/useParallax'
+import { percentMinMax } from 'lib/percentMinMax'
+import { useRef } from 'react'
 
 export default function What2() {
-  const mainCx = cx(
-    //
-    'What2',
-    'p-[10%]',
-    'gradient'
-  )
+  const ref = useRef()
+  const { scroll, visible } = useParallax({ ref })
+
+  const mainCx = cx('What2', 'Section centered', 'p-[10%]', 'gradient')
 
   const textCx = cx(
     'text-min-xl',
@@ -15,8 +17,8 @@ export default function What2() {
   )
 
   return (
-    <Section className={mainCx}>
+    <section ref={ref} className={mainCx}>
       <h3 className={textCx}>Un evento excepcional enmarcado por la belleza natural de Granada</h3>
-    </Section>
+    </section>
   )
 }

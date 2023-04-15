@@ -4,10 +4,7 @@ import cx from 'clsx'
 import { Sora } from 'next/font/google'
 import 'styles/globals.css'
 
-const sora = Sora({
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800'],
-  subsets: ['latin'],
-})
+const sora = Sora({ weight: ['100', '400', '800'], subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   const htmlCx = cx(sora.className)

@@ -2,18 +2,40 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-.gradient {
-  background: linear-gradient(180deg, #aa6890 0%, #dd778a 100%);
+@layer components {
+  .Section {
+    @apply w-screen h-screen overflow-hidden;
+  }
+
+  .absolute-right-left {
+    @apply absolute right-0 left-0;
+  }
+
+  .centered {
+    @apply flex flex-col justify-center items-center;
+  }
 }
 
-.text-gradient {
-  background: linear-gradient(275deg, #ac3eb7 10%, #ea8e98 75%, #ffbdbd 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
+@layer utilities {
+  .text-min-xl {
+    font-size: min(15vw, 34px);
+  }
 
-.text-min-xl {
-  font-size: min(15vw, 34px);
+  .gradient {
+    background: radial-gradient(
+      160% 100% at 77% 0%,
+      #b76f97 0%,
+      #ec899b 40%,
+      #ffa8a7 75%,
+      #ffbdbd 100%
+    );
+  }
+
+  .text-gradient {
+    background: linear-gradient(275deg, #ac3eb7 10%, #ea8e98 75%, #ffbdbd 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
 }

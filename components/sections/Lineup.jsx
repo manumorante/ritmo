@@ -1,16 +1,16 @@
 import cx from 'clsx'
-import Section from 'components/Section'
 
 export default function Lineup() {
   const mainCx = cx(
     //
     'Lineup',
+    'Section',
     'p-[10%]',
     'bg-white'
   )
 
   return (
-    <Section className={mainCx}>
+    <section className={mainCx}>
       <h3>Lineup</h3>
 
       <ul>
@@ -36,6 +36,6 @@ export default function Lineup() {
         <li>Sama Yax</li>
         <li>Undo (live)</li>
       </ul>
-    </Section>
+    </section>
   )
 }

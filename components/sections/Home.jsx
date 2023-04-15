@@ -1,32 +1,53 @@
+'use client'
+
 import cx from 'clsx'
-import Section from 'components/Section'
+import { useParallax } from 'lib/useParallax'
+import { percentMinMax } from 'lib/percentMinMax'
+import { useRef } from 'react'
 import Image from 'next/image'
 
 export default function Home() {
-  const mainCx = cx(
-    //
-    'Home',
-    'text-white bg-gray-300',
-    'relative'
-  )
+  const ref = useRef(null)
+  const { scroll } = useParallax({ ref, visible: true })
+  const mainCx = cx('Home', 'Section gradient relative')
+  const logoCx = cx('Ritmo', 'absolute-right-left')
+  const ritmoCx = cx('max-w-[200px] h-auto mx-auto')
+  const dateCx = cx('Date', 'absolute-right-left text-center')
+  const dateTxtCx = cx('text-2xl text-white opacity-80')
 
-  const logoCx = cx('Ritmo', 'max-w-[100px] h-auto')
-  const dateCx = cx('Date mt-4 text-base opacity-80')
-  const imageCx = cx('Cover', 'absolute z-0 object-cover w-full h-full')
+  const imageCx = cx('Arco', 'absolute w-full h-auto')
+
+  const logoStyle = { top: '20%', transform: `translateY(${percentMinMax(scroll, 0, 400)}px)` }
+  const dateStyle = { top: '30%', transform: `translateY(${percentMinMax(scroll, 0, 350)}px)` }
+  const imageStyle = {
+    top: '32%',
+    transform: `translateY(${percentMinMax(scroll, 0, 500)}px)
+     scale(${percentMinMax(scroll, 1, 0.9)})`,
+  }
 
   return (
-    <Section className={mainCx}>
-      <div className='static z-10 text-center'>
+    <section ref={ref} className={mainCx}>
+      <div className={logoCx} style={logoStyle}>
         <Image
-          className={logoCx}
+          className={ritmoCx}
           src={'/ritmo-logo.png'}
           width={396}
           height={136}
           alt='RITMO logo'
         />
-        <p className={dateCx}>5-6 MAYO</p>
       </div>
-      <Image className={imageCx} src={'/portada.jpg'} width={970} height={568} alt='Ritmo' />
-    </Section>
+      <div className={dateCx} style={dateStyle}>
+        <p className={dateTxtCx}>5-6 MAYO</p>
+      </div>
+      {/* <code>scroll: {scroll}</code> */}
+      <Image
+        className={imageCx}
+        style={imageStyle}
+        src={'/arco.png'}
+        width={768}
+        height={814}
+        alt='FX'
+      />
+    </section>
   )
 }

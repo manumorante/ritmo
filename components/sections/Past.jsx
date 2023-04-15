@@ -1,13 +1,7 @@
 import cx from 'clsx'
-import Section from 'components/Section'
 
 export default function Past() {
-  const mainCx = cx(
-    //
-    'Past',
-    'p-[10%]',
-    'bg-white'
-  )
+  const mainCx = cx('Past', 'Section', 'p-[10%]', 'bg-white')
 
   const textStyle = { fontSize: 'min(5vw, 4rem)' }
   const textCx = cx(
@@ -16,10 +10,10 @@ export default function Past() {
   )
 
   return (
-    <Section className={mainCx}>
+    <section className={mainCx}>
       <h3 className={textCx} style={textStyle}>
         Eventos anteriores
       </h3>
-    </Section>
+    </section>
   )
 }

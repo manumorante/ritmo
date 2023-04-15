@@ -1,23 +1,31 @@
+'use client'
+
 import cx from 'clsx'
-import Section from 'components/Section'
+import { useParallax } from 'lib/useParallax'
+import { percentMinMax } from 'lib/percentMinMax'
+import { useRef } from 'react'
 
 export default function What() {
-  const mainCx = cx(
-    //
-    'What',
-    'p-[10%]',
-    'bg-white'
-  )
+  const ref = useRef()
+  const { scroll } = useParallax({ ref })
+  const mainCx = cx('What', 'Section relative', 'bg-white')
 
   const textCx = cx(
+    'absolute-right-left top-1/2',
+    'px-8',
+    'text-center',
     'text-min-xl',
-    'text-center font-extrabold tracking-tight leading-none',
+    'font-extrabold tracking-tight leading-none',
     'text-[#AC3EB7] text-gradient'
   )
 
+  const textStyle = { transform: `translateY(${scroll * -3}px)` }
+
   return (
-    <Section className={mainCx}>
-      <h3 className={textCx}>Quédate a vivir la música en un paraje natural</h3>
-    </Section>
+    <section ref={ref} className={mainCx}>
+      <h3 className={textCx} style={textStyle}>
+        Quédate a vivir la música en un paraje natural
+      </h3>
+    </section>
   )
 }
