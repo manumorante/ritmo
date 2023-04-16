@@ -3,22 +3,25 @@
 @import 'tailwindcss/utilities';
 
 @layer base {
+  html,
   body {
-    background-color: #c762aa29;
+    @apply h-full 
+    overflow-x-hidden overflow-y-auto
+    bg-white;
+
+    perspective-origin: right bottom;
+    perspective: 1px;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
 @layer components {
   .section {
-    @apply w-screen overflow-hidden relative;
+    @apply w-full relative overflow-hidden;
   }
 
-  .right-left {
-    @apply absolute right-0 left-0;
-  }
-
-  .centered {
-    @apply flex flex-col justify-center items-center;
+  .container {
+    @apply w-full max-w-xl mx-auto px-8;
   }
 }
 
@@ -32,13 +35,7 @@
   }
 
   .gradient {
-    background-image: radial-gradient(
-      160% 100% at 77% 0%,
-      #b76f97 0%,
-      #ec899b 40%,
-      #ffa8a7 75%,
-      #ffbdbd 100%
-    );
+    background: radial-gradient(160% 100% at 77% 0%, #b76f97 0%, #ec899b 40%, #ffa8a7 75%, #ffbdbd 100%);
   }
 
   .text-gradient {
@@ -46,6 +43,5 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-fill-color: transparent;
   }
 }

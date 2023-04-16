@@ -1,11 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, // Recommended for the `pages` directory, default in `app`.
+  reactStrictMode: true,
   swcMinify: true,
+  images: {
+    domains: ['picsum.photos'],
+  },
   experimental: {
-    // Required:
     appDir: true,
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

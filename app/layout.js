@@ -3,7 +3,7 @@ import { META } from 'public/data'
 import { Sora } from 'next/font/google'
 import 'styles/globals.css'
 
-const sora = Sora({ weight: ['500', '800'], subsets: ['latin'] })
+const sora = Sora({ weight: ['100', '200', '300', '400', '500', '800'], subsets: ['latin'] })
 
 export default function RootLayout({ children }) {
   return (

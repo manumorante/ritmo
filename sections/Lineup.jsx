@@ -1,32 +1,13 @@
-'use client'
-
 import cx from 'clsx'
-import { useParallax } from 'lib/useParallax'
-import { percentMinMax } from 'lib/percentMinMax'
-import { useRef } from 'react'
 
 export default function Lineup() {
-  const ref = useRef()
-  const { scroll } = useParallax({ ref })
   const sectionCx = cx('Lineup', 'section py-10', 'gradient text-white')
-
-  const titleCx = cx(
-    'm-10',
-    'text-center',
-    'text-min-xl',
-    'font-extrabold tracking-tight leading-none',
-    'text-white'
-  )
-
+  const titleCx = cx('m-10', 'text-center', 'text-min-xl', 'font-extrabold tracking-tight leading-none', 'text-white')
   const lineupCx = cx('m-10', 'font-extrabold text-2xl')
 
-  const textStyle = {}
-
   return (
-    <section ref={ref} className={sectionCx}>
-      <h3 className={titleCx} style={textStyle}>
-        Lineup
-      </h3>
+    <section className={sectionCx}>
+      <h3 className={titleCx}>Lineup</h3>
 
       <ul className={lineupCx}>
         <li>Andre VII</li>

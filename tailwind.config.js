@@ -1,5 +1,5 @@
 module.exports = {
-  content: ['./app/**/*.{js,jsx}', './components/**/*.jsx'],
+  content: ['./app/**/*.{js,jsx}', './components/**/*.jsx', './sections/*.jsx'],
   theme: {
     screens: {
       // base  iPhone SE (Jose Luis) 320px

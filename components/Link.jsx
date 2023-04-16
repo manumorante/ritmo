@@ -2,11 +2,11 @@ import cx from 'clsx'
 export default function Link({ children, href, secondary = false }) {
   const baseCx = cx(
     'inline-block',
-    { 'py-5 px-4': !secondary },
+    { 'py-3 px-6': !secondary },
     { 'py-4 px-4': secondary },
 
     'text-lg',
-    'font-extrabold',
+    'font-medium',
 
     'text-center',
     'rounded-full',

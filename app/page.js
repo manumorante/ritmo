@@ -1,21 +1,21 @@
-import Home from 'components/sections/Home'
-import What from 'components/sections/What'
-import What2 from 'components/sections/What2'
-import Location from 'components/sections/Location'
-import Past from 'components/sections/Past'
-import Lineup from 'components/sections/Lineup'
-import Info from 'components/sections/Info'
+import Header from 'components/Header'
+import { Home, What, What2, Location, Past, Lineup, Info } from 'sections'
+import Buy from 'sections/Buy'
+import Footer from 'sections/Footer'
 
 export default function Page() {
   return (
     <>
+      <Header />
       <Home />
       <What />
       <Location />
+      <Buy />
       <What2 />
       <Past />
       <Lineup />
       <Info />
+      <Footer />
     </>
   )
 }

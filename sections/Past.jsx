@@ -1,17 +1,9 @@
-'use client'
-
 import cx from 'clsx'
-import { useParallax } from 'lib/useParallax'
-import { percentMinMax } from 'lib/percentMinMax'
-import { useRef } from 'react'
 import Moments from 'components/Moments'
 import Image from 'next/image'
 
 export default function Past() {
-  const ref = useRef()
-  const { scroll } = useParallax({ ref })
   const sectionCx = cx('Past', 'section py-10', 'bg-white')
-
   const titleCx = cx(
     'm-10',
     'text-center',
@@ -19,20 +11,15 @@ export default function Past() {
     'font-extrabold tracking-tight leading-none',
     'text-[#AC3EB7] text-gradient'
   )
-
   const textCx = cx('m-10 text-center text-min-md text-neutral-600')
 
-  const textStyle = {}
-
   return (
-    <section ref={ref} className={sectionCx}>
-      <h3 className={titleCx} style={textStyle}>
-        Eventos anteriores
-      </h3>
+    <section className={sectionCx}>
+      <h3 className={titleCx}>Eventos anteriores</h3>
 
       <p className={textCx}>
-        Con grupos como <strong>EsteYelOtro</strong> o <strong>EldeMaspara Alla</strong> mas de 1000
-        han disfrutado ya de la magia de ritmo.
+        Con grupos como <strong>EsteYelOtro</strong> o <strong>EldeMaspara Alla</strong> mas de 1000 han disfrutado ya
+        de la magia de ritmo.
       </p>
 
       <Moments>
